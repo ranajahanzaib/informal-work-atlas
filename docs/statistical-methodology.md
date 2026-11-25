@@ -1,0 +1,5 @@
+# Statistical methodology
+
+The informal employment rate is the share of employed persons who are in informal employment. It is distinct from the share employed in the informal sector, self-employment, and vulnerable employment. See [ILOSTAT's informality material](https://ilostat.ilo.org/topics/informality/) and its indicator-specific notes for the definitions governing any selected release.
+
+Modelled estimates combine national reported and imputed information as described by ILOSTAT. A modelled estimate must not be presented as a direct national observation merely because its reference area is a country. The series status and source metadata remain available in the underlying table/export. The current indicator set consists of separate ILOEST series and does not calculate composite rankings, causal claims, confidence intervals, regional aggregates, or cross-standard trends. Missing years are left as gaps and are not connected in the chart. No denominator is recomputed by this application.

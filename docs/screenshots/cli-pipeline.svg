@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" width="880" height="500">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; }
+      .header { fill: #161b22; }
+      .title { fill: #8b949e; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 500; text-anchor: middle; }
+      .text { font-family: "SF Mono", "Fira Code", "DM Mono", Menlo, Consolas, monospace; font-size: 13px; line-height: 1.5; }
+      .prompt { fill: #58a6ff; font-weight: 600; }
+      .cmd { fill: #f0f6fc; }
+      .dim { fill: #8b949e; }
+      .success { fill: #3fb950; font-weight: 600; }
+      .accent { fill: #d29922; }
+      .cyan { fill: #39c5cf; }
+      .btn-red { fill: #ff5f56; }
+      .btn-yellow { fill: #ffbd2e; }
+      .btn-green { fill: #27c93f; }
+    </style>
+  </defs>
+
+  <!-- Window container with shadow -->
+  <rect class="bg" width="880" height="500" rx="10" ry="10" stroke="#30363d" stroke-width="1"/>
+  
+  <!-- Title bar -->
+  <rect class="header" width="880" height="38" rx="10" ry="10"/>
+  <rect class="header" y="28" width="880" height="10"/>
+  <line x1="0" y1="38" x2="880" y2="38" stroke="#30363d" stroke-width="1"/>
+  
+  <!-- Window buttons -->
+  <circle class="btn-red" cx="20" cy="19" r="6"/>
+  <circle class="btn-yellow" cx="40" cy="19" r="6"/>
+  <circle class="btn-green" cx="60" cy="19" r="6"/>
+  
+  <!-- Window title -->
+  <text class="title" x="440" y="23">iwa — python -m iwa.cli refresh &amp; serve</text>
+
+  <!-- Terminal content -->
+  <g class="text" transform="translate(24, 68)">
+    <!-- Command 1: Data refresh -->
+    <text y="0"><tspan class="prompt">$ </tspan><tspan class="cmd">python3 -m iwa.cli refresh</tspan></text>
+    
+    <text y="24" class="dim">Connecting to live ILOSTAT bulk catalogue via rplumber.ilo.org...</text>
+    <text y="44" class="dim">Discovered 18 annual modelled indicator series from official metadata.</text>
+    
+    <text y="70" class="dim">Retrieved  1/18: </text><text x="140" y="70" class="cmd">Informal employment rate by sex -- ILO modelled estimates (%)</text>
+    <text y="90" class="dim">Retrieved  2/18: </text><text x="140" y="90" class="cmd">Informal employment by sex -- ILO modelled estimates (thousands)</text>
+    <text y="110" class="dim">Retrieved  3/18: </text><text x="140" y="110" class="cmd">Employment-to-population ratio by sex and age -- ILO modelled estimates (%)</text>
+    <text y="130" class="dim">Retrieved  4/18: </text><text x="140" y="130" class="cmd">Labour force participation rate by sex and age -- ILO modelled estimates (%)</text>
+    <text y="150" class="dim">Retrieved  5/18: </text><text x="140" y="150" class="cmd">Unemployment rate by sex and age -- ILO modelled estimates (%)</text>
+    <text y="170" class="dim">... (13 additional series validated across 276 reference areas)</text>
+    
+    <text y="200" class="dim">Validating observations: </text><text x="195" y="200" class="success">0 duplicates, 0 non-numeric, 0 negative rates</text>
+    <text y="220" class="dim">Enriching dictionary mappings: </text><text x="245" y="220" class="cyan">327 countries, 4 sex codes, 3,695 sources</text>
+    <text y="244" class="success">&#10003; Published 20261124T145138999796Z: 2,362,695 observations across 18 indicators</text>
+    
+    <!-- Command 2: Serve -->
+    <text y="284"><tspan class="prompt">$ </tspan><tspan class="cmd">python3 -m iwa.cli serve</tspan></text>
+    <text y="308" class="cyan">Informal Work Atlas: http://127.0.0.1:3000</text>
+    
+    <!-- Command 3: Test Health API -->
+    <text y="348"><tspan class="prompt">$ </tspan><tspan class="cmd">curl -s http://127.0.0.1:3000/api/health | jq '{status, snapshot_id: .snapshot.snapshot_id, observations: .snapshot.observations}'</tspan></text>
+    <text y="372" class="cmd">{</text>
+    <text y="392" class="cmd">  <tspan class="cyan">"status"</tspan>: <tspan class="success">"ok"</tspan>,</text>
+    <text y="412" class="cmd">  <tspan class="cyan">"snapshot_id"</tspan>: <tspan class="accent">"20261124T145138999796Z"</tspan>,</text>
+    <text y="432" class="cmd">  <tspan class="cyan">"observations"</tspan>: <tspan class="cmd">2362695</tspan></text>
+    <text y="452" class="cmd">}</text>
+  </g>
+</svg>

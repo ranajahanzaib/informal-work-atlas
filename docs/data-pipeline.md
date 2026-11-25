@@ -1,0 +1,7 @@
+# Data pipeline
+
+Run `make data` to fetch the official catalogue, select the latest annual row matching each curated series description, retrieve compressed tables with up to four concurrent workers, and validate them before publication. Downloads use timeouts and exponential retry. A previous raw table is reused when its catalogue update marker is unchanged. The raw catalogue and source files are preserved inside immutable snapshots. Atomic directory and pointer replacement keeps the previously published snapshot active if a refresh fails. Series missing from the live catalogue are listed in the manifest; values are never borrowed from another series.
+
+Validation checks required source columns, annual time syntax, numeric values, percentage bounds for percentage series, non-negative values, non-empty reference-area codes, and duplicate dimension keys including source and all classification dimensions. Empty or explicit null-like source values remain absent. A schema change, invalid non-missing value, or duplicate key aborts publication. Classification dimensions, source codes, observation status, notes, collection, release, estimate type and retrieval time are retained in normalized CSV.
+
+The snapshot report is `data/processed/snapshots/<snapshot>/manifest.json`. Downloaded source files and generated snapshots are excluded from version control and are not bundled with the application. Nationally reported and modelled series remain separate.
