@@ -1,6 +1,6 @@
-Fixes #<issue_number_goes_here>
+Fixes #
 
-> It's a good idea to open an issue first for discussion.
+Related issue:
 
 **Description**
 A brief summary of what this PR does and why.

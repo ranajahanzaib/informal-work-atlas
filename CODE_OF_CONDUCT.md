@@ -58,10 +58,10 @@ representative at an online or offline event.
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the community leaders responsible for enforcement at
-[INSERT CONTACT METHOD].
-All complaints will be reviewed and investigated promptly and fairly.
+Incidents involving GitHub-hosted content can be reported through
+[GitHub's report abuse form](https://github.com/contact/report-abuse). Avoid
+posting private incident details in public issues. GitHub processes reports
+under its moderation policies.
 
 All community leaders are obligated to respect the privacy and security of the
 reporter of any incident.
